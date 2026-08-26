@@ -88,8 +88,8 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 ### Implementation for User Story 3
 
-- [ ] T009 [P] [US3] Implement audio module in `js/audio.js`: export playCycleEndAlert() returning Promise<boolean>, lazy AudioContext creation/resume, single short ~0.5 s beep via OscillatorNode+GainNode, resolve false silently when playback is blocked (FR-009, Q4, research.md R3)
-- [ ] T010 [US3] Integrate end-of-cycle notification in `js/main.js`: call playCycleEndAlert() inside the onCycleEnd handler, add ephemeral .cycle-ended class to root container removed on next user action, keep visual-only fallback clear when audio resolves false (depends on T008, T009)
+- [X] T009 [P] [US3] Implement audio module in `js/audio.js`: export playCycleEndAlert() returning Promise<boolean>, lazy AudioContext creation/resume, single short ~0.5 s beep via OscillatorNode+GainNode, resolve false silently when playback is blocked (FR-009, Q4, research.md R3)
+- [X] T010 [US3] Integrate end-of-cycle notification in `js/main.js`: call playCycleEndAlert() inside the onCycleEnd handler, add ephemeral .cycle-ended class to root container removed on next user action, keep visual-only fallback clear when audio resolves false (depends on T008, T009)
 
 **Checkpoint**: Stories 1–3 integradas: cada fin de ciclo se percibe por sonido y vista aunque el usuario no mire la pantalla
 

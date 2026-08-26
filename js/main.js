@@ -1,4 +1,5 @@
-import { onTick, onStateChange, start, pause, reset } from "./timer.js";
+import { onTick, onStateChange, onCycleEnd, start, pause, reset } from "./timer.js";
+import { playCycleEndAlert } from "./audio.js";
 
 const appRoot = document.querySelector(".app");
 const timeDisplay = document.getElementById("time-display");
@@ -57,14 +58,26 @@ onStateChange((snapshot) => {
   renderTime(snapshot.remainingMs);
 });
 
+onCycleEnd(() => {
+  appRoot.classList.add("cycle-ended");
+  playCycleEndAlert();
+});
+
+function clearCycleEndedFlag() {
+  appRoot.classList.remove("cycle-ended");
+}
+
 startButton.addEventListener("click", () => {
+  clearCycleEndedFlag();
   start();
 });
 
 pauseButton.addEventListener("click", () => {
+  clearCycleEndedFlag();
   pause();
 });
 
 resetButton.addEventListener("click", () => {
+  clearCycleEndedFlag();
   reset();
 });
