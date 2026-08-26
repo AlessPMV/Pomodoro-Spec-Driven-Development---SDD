@@ -199,10 +199,15 @@ body {
 @media (min-width: 768px) {
   .app {
     max-width: 30rem;
+    padding-inline: 2.25rem;
   }
 
   .app__title {
     font-size: 1.7rem;
+  }
+
+  .timer__display {
+    font-size: 5.5rem;
   }
 }
 
@@ -213,5 +218,10 @@ body {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: none;
   }
 }

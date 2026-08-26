@@ -105,3 +105,9 @@ export function onStateChange(callback) {
 export function onCycleEnd(callback) {
   cycleEndSubscribers.push(callback);
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (state === "running" && !document.hidden) {
+    runTick();
+  }
+});

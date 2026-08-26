@@ -114,9 +114,9 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 **Purpose**: Robustez transversal y validación final
 
-- [ ] T013 Add background-tab precision safeguard in `js/timer.js`: listen to visibilitychange on document and force immediate recomputation and render of remaining time when returning to the tab (FR-015, SC-002)
-- [ ] T014 [P] Refine responsive breakpoints and motion in `css/styles.css`: media queries around ~480 px and ~768 px scaling typography with clamp()/relative units, prefers-reduced-motion guard for .cycle-ended transitions (SC-005, research.md R5/R6)
-- [ ] T015 Update `README.md` with project description, how to run (open `index.html` or any static server) and a link to `specs/001-pomodoro-timer/quickstart.md`
+- [X] T013 Add background-tab precision safeguard in `js/timer.js`: listen to visibilitychange on document and force immediate recomputation and render of remaining time when returning to the tab (FR-015, SC-002)
+- [X] T014 [P] Refine responsive breakpoints and motion in `css/styles.css`: media queries around ~480 px and ~768 px scaling typography with clamp()/relative units, prefers-reduced-motion guard for .cycle-ended transitions (SC-005, research.md R5/R6)
+- [X] T015 Update `README.md` with project description, how to run (open `index.html` or any static server) and a link to `specs/001-pomodoro-timer/quickstart.md`
 - [ ] T016 Run full validation per `quickstart.md`: scenarios E1–E9, W3C HTML/CSS validators clean, zero external requests audit via DevTools network tab, keyboard-only pass
 
 ---
