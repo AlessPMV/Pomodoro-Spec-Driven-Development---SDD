@@ -73,8 +73,8 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 ### Implementation for User Story 2
 
-- [ ] T007 [US2] Extend `js/timer.js`: detect timeout when remainingMs reaches 0 in running state, emit new subscription onCycleEnd(finishedPhase), alternate phase work ⇄ shortBreak, load next phase at full duration in idle without auto-start (FR-007, FR-016, research.md R2)
-- [ ] T008 [US2] Render phase identity in `js/main.js` and `css/styles.css`: update `[data-phase-label]` text ("Trabajo"/"Descanso corto"), toggle root data-phase attribute driving the color scheme, announce phase change through the `[aria-live="polite"]` region (depends on T007)
+- [X] T007 [US2] Extend `js/timer.js`: detect timeout when remainingMs reaches 0 in running state, emit new subscription onCycleEnd(finishedPhase), alternate phase work ⇄ shortBreak, load next phase at full duration in idle without auto-start (FR-007, FR-016, research.md R2)
+- [X] T008 [US2] Render phase identity in `js/main.js` and `css/styles.css`: update `[data-phase-label]` text ("Trabajo"/"Descanso corto"), toggle root data-phase attribute driving the color scheme, announce phase change through the `[aria-live="polite"]` region (depends on T007)
 
 **Checkpoint**: Stories 1 AND 2 work together: los ciclos alternan indefinidamente esperando siempre inicio manual (E4 pasos 4–5)
 

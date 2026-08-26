@@ -11,6 +11,7 @@ let tickIntervalId = null;
 
 const tickSubscribers = [];
 const stateSubscribers = [];
+const cycleEndSubscribers = [];
 
 function getSnapshot() {
   return { state, phase, remainingMs };
@@ -25,6 +26,10 @@ function notifyTick() {
   tickSubscribers.forEach((callback) => callback(remainingMs));
 }
 
+function notifyCycleEnd(finishedPhase) {
+  cycleEndSubscribers.forEach((callback) => callback(finishedPhase));
+}
+
 function stopTicking() {
   if (tickIntervalId !== null) {
     clearInterval(tickIntervalId);
@@ -32,10 +37,26 @@ function stopTicking() {
   }
 }
 
+function switchToNextPhase() {
+  phase = phase === "work" ? "shortBreak" : "work";
+  remainingMs = DURATIONS[phase];
+}
+
+function finishCycle() {
+  stopTicking();
+  const finishedPhase = phase;
+  state = "idle";
+  switchToNextPhase();
+  notifyCycleEnd(finishedPhase);
+  notifyStateChange();
+  notifyTick();
+}
+
 function runTick() {
   remainingMs = Math.max(0, deadlineMs - Date.now());
   if (remainingMs === 0) {
-    stopTicking();
+    finishCycle();
+    return;
   }
   notifyTick();
 }
@@ -79,4 +100,8 @@ export function onTick(callback) {
 
 export function onStateChange(callback) {
   stateSubscribers.push(callback);
+}
+
+export function onCycleEnd(callback) {
+  cycleEndSubscribers.push(callback);
 }
