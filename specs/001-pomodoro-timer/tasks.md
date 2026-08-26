@@ -58,8 +58,8 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 ### Implementation for User Story 1
 
-- [ ] T005 [P] [US1] Implement countdown engine in `js/timer.js`: export `DURATIONS` (work=25min, shortBreak=5min), state machine idle|running|paused with absolute-deadline computation per research.md R1, commands start()/pause()/reset(), subscriptions onTick(remainingMs) firing once per second and onStateChange(snapshot)
-- [ ] T006 [US1] Wire controls and rendering in `js/main.js`: bind click handlers of `#start-btn`, `#pause-btn`, `#reset-btn` to engine commands, render mm:ss into `<time id="time-display">` on every tick, set data-state on root container and toggle button disabled states per `contracts/dom-contract.md` (depends on T005)
+- [X] T005 [P] [US1] Implement countdown engine in `js/timer.js`: export `DURATIONS` (work=25min, shortBreak=5min), state machine idle|running|paused with absolute-deadline computation per research.md R1, commands start()/pause()/reset(), subscriptions onTick(remainingMs) firing once per second and onStateChange(snapshot)
+- [X] T006 [US1] Wire controls and rendering in `js/main.js`: bind click handlers of `#start-btn`, `#pause-btn`, `#reset-btn` to engine commands, render mm:ss into `<time id="time-display">` on every tick, set data-state on root container and toggle button disabled states per `contracts/dom-contract.md` (depends on T005)
 
 **Checkpoint**: User Story 1 fully functional and independently testable (E1–E3 pass; pause preserves remaining time; reset restores 25:00 without touching anything else)
 
