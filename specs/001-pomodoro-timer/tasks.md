@@ -32,7 +32,7 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 **Purpose**: Inicialización del proyecto y estructura base
 
-- [ ] T001 Create directory structure `css/` and `js/` per plan.md Project Structure
+- [X] T001 Create directory structure `css/` and `js/` per plan.md Project Structure
 - [ ] T002 Verify baseline: open placeholder root page in evergreen browser without console errors (no toolchain required)
 
 ---
@@ -43,8 +43,8 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 **⚠ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Build full semantic accessible markup in `index.html` per `contracts/dom-contract.md`: unique `h1`, `main` landmark, `[data-phase-label]`, `<time id="time-display">` showing 25:00, `#start-btn`, `#pause-btn`, `#reset-btn` with visible Spanish text, `<output id="cycle-counter">`, `[aria-live="polite"]` region, `lang="es"`, viewport meta
-- [ ] T004 [P] Build base mobile-first layout in `css/styles.css`: centered Flexbox card, buttons at least 44x44 px, visible focus styles, WCAG AA contrast tokens for both phases, `[data-state]`/`[data-phase]` attribute selectors as styling hooks
+- [X] T003 Build full semantic accessible markup in `index.html` per `contracts/dom-contract.md`: unique `h1`, `main` landmark, `[data-phase-label]`, `<time id="time-display">` showing 25:00, `#start-btn`, `#pause-btn`, `#reset-btn` with visible Spanish text, `<output id="cycle-counter">`, `[aria-live="polite"]` region, `lang="es"`, viewport meta
+- [X] T004 [P] Build base mobile-first layout in `css/styles.css`: centered Flexbox card, buttons at least 44x44 px, visible focus styles, WCAG AA contrast tokens for both phases, `[data-state]`/`[data-phase]` attribute selectors as styling hooks
 
 **Checkpoint**: Estructura y estilos base listos — las historias solo cablean lógica sobre este contrato
 
