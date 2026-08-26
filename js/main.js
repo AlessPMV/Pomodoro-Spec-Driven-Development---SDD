@@ -1,5 +1,6 @@
 import { onTick, onStateChange, onCycleEnd, start, pause, reset } from "./timer.js";
 import { playCycleEndAlert } from "./audio.js";
+import { readTodayCount, incrementTodayCount } from "./storage.js";
 
 const appRoot = document.querySelector(".app");
 const timeDisplay = document.getElementById("time-display");
@@ -8,6 +9,7 @@ const pauseButton = document.getElementById("pause-btn");
 const resetButton = document.getElementById("reset-btn");
 const phaseLabel = document.querySelector("[data-phase-label]");
 const liveRegion = document.getElementById("live-region");
+const cycleCounter = document.getElementById("cycle-counter");
 
 const PHASE_LABELS = {
   work: "Trabajo",
@@ -44,6 +46,8 @@ function announcePhase(phaseKey, remainingMs) {
 
 let currentPhase = "work";
 
+cycleCounter.textContent = String(readTodayCount());
+
 onTick(renderTime);
 
 onStateChange((snapshot) => {
@@ -58,7 +62,10 @@ onStateChange((snapshot) => {
   renderTime(snapshot.remainingMs);
 });
 
-onCycleEnd(() => {
+onCycleEnd((finishedPhase) => {
+  if (finishedPhase === "work") {
+    cycleCounter.textContent = String(incrementTodayCount());
+  }
   appRoot.classList.add("cycle-ended");
   playCycleEndAlert();
 });

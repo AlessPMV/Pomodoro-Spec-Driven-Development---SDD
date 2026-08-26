@@ -103,8 +103,8 @@ Proyecto web estático según plan.md: `index.html` en raíz, `css/`, `js/`.
 
 ### Implementation for User Story 4
 
-- [ ] T011 [P] [US4] Implement daily storage module in `js/storage.js`: export readTodayCount(now?) and incrementTodayCount(now?) using key pomodoros:YYYY-MM-DD with local date, normalize corrupt or negative values to 0, never throw (FR-012, Q3, research.md R4)
-- [ ] T012 [US4] Wire counter display in `js/main.js`: initialize `<output id="cycle-counter">` from readTodayCount() on page load, increment via incrementTodayCount() only when onCycleEnd reports finished phase work, keep value stable across pause/reset/break transitions (FR-010, FR-011) (depends on T010, T011)
+- [X] T011 [P] [US4] Implement daily storage module in `js/storage.js`: export readTodayCount(now?) and incrementTodayCount(now?) using key pomodoros:YYYY-MM-DD with local date, normalize corrupt or negative values to 0, never throw (FR-012, Q3, research.md R4)
+- [X] T012 [US4] Wire counter display in `js/main.js`: initialize `<output id="cycle-counter">` from readTodayCount() on page load, increment via incrementTodayCount() only when onCycleEnd reports finished phase work, keep value stable across pause/reset/break transitions (FR-010, FR-011) (depends on T010, T011)
 
 **Checkpoint**: All four user stories functional: flujo completo Pomodoro con métrica diaria persistente
 
